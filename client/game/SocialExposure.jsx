@@ -14,11 +14,11 @@ export default class SocialExposure extends React.Component {
 
   render() {
     const { game, player } = this.props;
-
+		
     const otherPlayers = _.filter(
       game.players,
-      p =>
-        neighbors.includes(otherPlayer.get("nodeId"))
+      otherPlayer =>
+        player.get("neighbors").includes(otherPlayer._id)
     );
 
     if (otherPlayers.length === 0) {

@@ -11,9 +11,9 @@ export default class TaskStimulus extends React.Component {
       <div className="task-stimulus">
         <div className="task-image">
           {imagePath ? (
-            ""
-          ) : (
             <img src={imagePath} height={"300px"} />
+          ) : (
+            ""
           )}
         </div>
         <div className="task-question">

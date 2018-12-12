@@ -14,22 +14,18 @@ import { taskData } from "./constants";
 // the game.
 Empirica.gameInit(game => {
   
-	// Establish node list  
-  const nodes = [];
-  for (var i = game.players.length; i--; i > 0) nodes.push(i);
+	// Establish player list
+  const playerIds = _.map(game.players, player=>player._id);
 
   game.players.forEach((player, i) => {
     player.set("avatar", `/avatars/jdenticon/${player._id}`);
     player.set("score", 0);
-
-    // Give each player a nodeId
-    player.set("nodeId", i);
-
-    // Assign each node as a neighbor with probability 0.5
-    const networkNeighbors = _.filter(nodes, function(num) {
-      return _.random(1) == 1;
-    });
-    player.set("neighbors", networkNeighbors);
+    
+    // Randomly select three players to observe
+    const otherPlayers = _.without(playerIds, player._id);
+		console.log(playerIds);
+		console.log(otherPlayers);
+		player.set("neighbors", _.sample(otherPlayers, 3));		
   });
 
   _.each(taskData, (task, taskName) => {
