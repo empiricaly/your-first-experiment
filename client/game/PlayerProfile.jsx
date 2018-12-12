@@ -26,8 +26,6 @@ export default class PlayerProfile extends React.Component {
   render() {
     const { stage } = this.props;
 
-    window.player = this.props.player;
-
     return (
       <aside className="player-profile">
         {this.renderProfile()}

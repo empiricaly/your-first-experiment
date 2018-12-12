@@ -2,9 +2,7 @@ import React from "react";
 
 export default class TaskStimulus extends React.Component {
   render() {
-    const { round, stage, player } = this.props;
-
-    window.round = round;
+    const { round, stage, player } = this.props;    
 
     const imagePath = round.get("imagePath");
     const questionText = round.get("questionText");

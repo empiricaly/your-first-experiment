@@ -13,9 +13,8 @@ import { taskData } from "./constants";
 // rounds and stages (with get/set methods), that will be able to use later in
 // the game.
 Empirica.gameInit(game => {
-  // Establish node list
-  console.log(game);
-
+  
+	// Establish node list  
   const nodes = [];
   for (var i = game.players.length; i--; i > 0) nodes.push(i);
 

@@ -21,9 +21,6 @@ export default class SocialExposure extends React.Component {
         neighbors.includes(otherPlayer.get("nodeId"))
     );
 
-    window.player = player;
-    window.op = otherPlayers;
-
     if (otherPlayers.length === 0) {
       return null;
     }
