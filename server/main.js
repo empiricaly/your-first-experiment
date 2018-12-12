@@ -13,17 +13,16 @@ import { taskData } from "./constants";
 // rounds and stages (with get/set methods), that will be able to use later in
 // the game.
 Empirica.gameInit(game => {
-  
-	// Establish player list
-  const playerIds = _.map(game.players, player=>player._id);
+  // Establish player list
+  const playerIds = _.map(game.players, player => player._id);
 
   game.players.forEach((player, i) => {
     player.set("avatar", `/avatars/jdenticon/${player._id}`);
     player.set("score", 0);
-    
+
     // Randomly select three players to observe
-    const otherPlayers = _.without(playerIds, player._id);		
-		player.set("neighbors", _.sample(otherPlayers, 3));		
+    const otherPlayers = _.without(playerIds, player._id);
+    player.set("neighbors", _.sample(otherPlayers, 3));
   });
 
   _.each(taskData, (task, taskName) => {
