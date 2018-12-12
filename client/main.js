@@ -11,7 +11,7 @@ import ExitSurvey from "./exit/ExitSurvey";
 import Thanks from "./exit/Thanks";
 
 // Set the Consent Component you want to present players (optional).
-Empirica.consent();
+Empirica.consent(Consent);
 
 // Introduction pages to show before they play the game (optional).
 // At this point they have been assigned a treatment. You can return
