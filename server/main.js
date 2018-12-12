@@ -22,9 +22,7 @@ Empirica.gameInit(game => {
     player.set("score", 0);
     
     // Randomly select three players to observe
-    const otherPlayers = _.without(playerIds, player._id);
-		console.log(playerIds);
-		console.log(otherPlayers);
+    const otherPlayers = _.without(playerIds, player._id);		
 		player.set("neighbors", _.sample(otherPlayers, 3));		
   });
 
