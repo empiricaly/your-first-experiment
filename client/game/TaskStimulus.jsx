@@ -10,7 +10,7 @@ export default class TaskStimulus extends React.Component {
     return (
       <div className="task-stimulus">
         <div className="task-image">
-          {imagePath == undefined ? (
+          {imagePath ? (
             ""
           ) : (
             <img src={imagePath} height={"300px"} />
