@@ -1,6 +1,9 @@
 import Empirica from "meteor/empirica:core";
-import "./bots.js";
+
 import "./callbacks.js";
+import "./bots.js";
+
+import { taskData } from "./constants";
 
 // gameInit is where the structure of a game is defined.
 // Just before every game starts, once all the players needed are ready, this
@@ -10,17 +13,46 @@ import "./callbacks.js";
 // rounds and stages (with get/set methods), that will be able to use later in
 // the game.
 Empirica.gameInit(game => {
+  // Establish node list
+  const nodes = [];
+  for (let i = 0; i <= game.players.length; i++) {
+    nodes.push(i);
+  }
+
   game.players.forEach((player, i) => {
     player.set("avatar", `/avatars/jdenticon/${player._id}`);
     player.set("score", 0);
+
+    // Give each player a nodeId based on their position
+    player.set("nodeId", i);
+
+    // Assign each node as a neighbor
+    const networkNeighbors = nodes.filter(node => node !== i);
+    player.set("neighbors", networkNeighbors);
   });
 
-  _.times(10, i => {
-    const round = game.addRound();
+  Object.keys(taskData).forEach(taskName => {
+    const task = taskData[taskName];
+    const round = game.addRound({
+      data: {
+        taskName: taskName,
+        questionText: task.questionText,
+        imagePath: task.path,
+        correctAnswer: task.correctAnswer
+      }
+    });
+
     round.addStage({
       name: "response",
       displayName: "Response",
-      durationInSeconds: 120
+      durationInSeconds: game.treatment.stageLength
     });
-  });
+
+    round.addStage({
+      name: "social",
+      displayName: "Social Information",
+      durationInSeconds: game.treatment.stageLength
+    });
+  })
+
 });
