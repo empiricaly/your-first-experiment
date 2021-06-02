@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "meteor/empirica:slider";
+import { Chat } from "@empirica/chat";
 
 export default class SocialExposure extends React.Component {
   renderSocialInteraction(otherPlayer) {
@@ -14,7 +15,7 @@ export default class SocialExposure extends React.Component {
   }
 
   render() {
-    const { game, player } = this.props;
+    const { game, player, round } = this.props;
 
     const otherPlayers = game.players.filter(p =>
       player.get("neighbors").includes(p.get("nodeId"))
@@ -35,6 +36,12 @@ export default class SocialExposure extends React.Component {
           }
         </p>
         {otherPlayers.map(p => this.renderSocialInteraction(p))}
+        {game.treatment.chat &&
+          <div>
+            <p className="chat-title"><strong>Chat</strong></p>
+            <Chat player={player} scope={round} />
+          </div>
+        }
       </div>
     );
   }

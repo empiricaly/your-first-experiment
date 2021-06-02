@@ -11,6 +11,11 @@ treatments:
     factorIds:
       - wJP9EZJxB8wuoYF4Q
       - WtRkXpGEt5czmJiKa
+  - name: 2 players 60s chat
+    factorIds:
+      - wJP9EZJxB8wuoYF4Q
+      - WtRkXpGEt5czmJiKa
+      - KCX3G6qQu8Fm9YyHo
 factorTypes:
   - _id: RTxCdhap342vwpYcT
     name: playerCount
@@ -23,6 +28,11 @@ factorTypes:
     description: how long the stages are (in seconds)
     required: true
     type: Integer
+  - _id: jn6YFbkKDwGFG7j69
+    name: chat
+    description: whether there is a chat or not during the social stage
+    required: false
+    type: Boolean
 factors:
   - _id: ivC5yG7X5PZmdWpTW
     name: one
@@ -36,6 +46,14 @@ factors:
     name: 60s
     value: 60
     factorTypeId: bx2iWZR4FrPTaQ48u
+  - _id: KCX3G6qQu8Fm9YyHo
+    name: 'true'
+    value: true
+    factorTypeId: jn6YFbkKDwGFG7j69
+  - _id: 6Sc5Sg2FGoDkwXwJj
+    name: 'false'
+    value: false
+    factorTypeId: jn6YFbkKDwGFG7j69
 lobbyConfigs:
   - name: default
     timeoutType: lobby
