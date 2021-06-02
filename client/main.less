@@ -1,107 +1,134 @@
-.round {
+/* ----------------
+- default styling -
+---------------- */
+
+.title {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid lightgray;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content > * {
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.player-profile {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 20%;
+  align-items: center;
 
-  .content {
-    flex-grow: 1;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
+  .profile-avatar {
+    width: 8rem;
+    height: 8rem;
+    margin: 3rem 0;
   }
 
-  .player-profile {
-    display: flex;
-    flex-direction: column;
-    width: 24rem;
-    min-height: 100%;
-    align-items: center;
-    padding: 3rem 4rem;
-
-    .profile-avatar {
-      width: 8rem;
-      height: 8rem;
-      margin: 3rem 0;
+  .profile-score {
+    text-align: center;
+    span {
+      font-size: 3rem;
+      font-weight: bold;
     }
+  }
 
-    .profile-score {
-      text-align: center;
-      span {
-        font-size: 3rem;
-        font-weight: bold;
-      }
+  .timer {
+    margin-top: 2rem;
+    text-align: center;
+
+    .seconds {
+      font-size: 3rem;
+      // Helvetica has tabular numbers (fixed width), which looks better
+      // for a timer, doesn't jump all over the place.
+      font-family: Helvetica, Arial, sans-serif;
+      color: green;
     }
-
-    .timer {
-      margin-top: 2rem;
-      text-align: center;
-
+    &.lessThan10 {
       .seconds {
-        font-size: 3rem;
-        // Helvetica has tabular numbers (fixed width), which looks better
-        // for a timer, doesn't jump all over the place.
-        font-family: Helvetica, Arial, sans-serif;
-        color: green;
+        color: orange;
       }
-      &.lessThan10 {
-        .seconds {
-          color: orange;
-        }
-      }
-      &.lessThan5 {
-        .seconds {
-          color: red;
-        }
+    }
+    &.lessThan5 {
+      .seconds {
+        color: red;
       }
     }
   }
+}
 
-  .task {
-    align-content: right;
-    padding: 4rem 4rem 0 4rem;
+.task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 
-    .task-response {
-      margin: 3rem 0 0;
-
-      form {
-        width: 40rem;
-
-        button[type="submit"] {
-          margin-top: 2rem;
-        }
-      }
-
-      .response-submitted {
-        background-color: #e8e8e8;
-        padding: 2rem;
-        border-radius: 0.4rem;
-
-        h5 {
-          margin: 0 0 0.5rem;
-          font-size: inherit;
-        }
-      }
-    }
+  .task-image {
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
-  .social-exposure {
-    margin: 4rem;
+  .task-question {
+    width: 100%;
+    text-align: center;
+  }
 
-    .alter {
+  .task-response {
+    width: 100%;
+
+    form {
       display: flex;
-      padding-right: 3rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
 
-      img {
-        width: 6rem;
-        height: 6rem;
-        margin-right: 3rem;
-      }
+    .response-submitted {
+      margin-top: 1.5rem;
+      background-color: #e8e8e8;
+      padding: 2rem;
+      border-radius: 0.4rem;
 
-      .range {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      h5 {
+        margin: 0 0 0.5rem;
+        font-size: inherit;
       }
+    }
+  }
+}
+
+.social-exposure {
+  width: 30%;
+
+  .alter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    img {
+      width: 6rem;
+      height: 6rem;
+      margin-right: 3rem;
+    }
+
+    .range {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -111,6 +138,7 @@ button {
   border-radius: 0.3rem;
   border: 1px solid lightgray;
   background-color: #eee;
+  cursor: pointer;
 
   &:hover {
     background-color: #ddd;
@@ -127,17 +155,6 @@ button {
   label {
     display: block;
     margin: 2rem 0 1rem;
-  }
-
-  input[type="text"],
-  input[type="number"] {
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.3rem;
-    border: 1px solid lightgray;
-  }
-
-  input[type="radio"] {
-    margin-right: 0.5rem;
   }
 
   textarea {
