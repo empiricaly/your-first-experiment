@@ -16,6 +16,12 @@ treatments:
       - wJP9EZJxB8wuoYF4Q
       - WtRkXpGEt5czmJiKa
       - KCX3G6qQu8Fm9YyHo
+  - name: '2 players + 1 bot, 60s chat'
+    factorIds:
+      - apZ29dqypvnJsSskH
+      - WtRkXpGEt5czmJiKa
+      - KCX3G6qQu8Fm9YyHo
+      - 7gWpbbAByyKrDsdni
 factorTypes:
   - _id: RTxCdhap342vwpYcT
     name: playerCount
@@ -33,6 +39,11 @@ factorTypes:
     description: whether there is a chat or not during the social stage
     required: false
     type: Boolean
+  - _id: ZcCi5ActZKAdGHTEj
+    name: botsCount
+    description: how many bots in the game
+    required: false
+    type: Integer
 factors:
   - _id: ivC5yG7X5PZmdWpTW
     name: one
@@ -54,6 +65,14 @@ factors:
     name: 'false'
     value: false
     factorTypeId: jn6YFbkKDwGFG7j69
+  - _id: 7gWpbbAByyKrDsdni
+    name: one
+    value: 1
+    factorTypeId: ZcCi5ActZKAdGHTEj
+  - _id: apZ29dqypvnJsSskH
+    name: three
+    value: 3
+    factorTypeId: RTxCdhap342vwpYcT
 lobbyConfigs:
   - name: default
     timeoutType: lobby
