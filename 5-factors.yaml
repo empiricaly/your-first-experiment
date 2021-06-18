@@ -26,6 +26,12 @@ treatments:
       - 3eGGMECp2Jd3qvLoy
       - 7A9aMyqgQmZK7bXMp
       - CQs9wYiCDGMp9dkAw
+  - name: 2 players and a bot
+    factorIds:
+      - LpwhFBESL2L5DQzWW
+      - 7A9aMyqgQmZK7bXMp
+      - LYP9FanFmBQELn5FD
+      - 8CvrL47x7vrvdnCmS
 factorTypes:
   - _id: beY87RhWHPuazePry
     name: playerCount
@@ -43,6 +49,11 @@ factorTypes:
     description: whether or not there should be a chat in the social stage
     required: false
     type: Boolean
+  - _id: gGiPRPJrzbRfD2YZf
+    name: botsCount
+    description: how many bots there are in the game
+    required: false
+    type: Integer
 factors:
   - _id: dpKA2KBx7r2q38akn
     name: one
@@ -64,6 +75,14 @@ factors:
     name: 'false'
     value: false
     factorTypeId: JJse663f5f3757MkR
+  - _id: 8CvrL47x7vrvdnCmS
+    name: 1bot
+    value: 1
+    factorTypeId: gGiPRPJrzbRfD2YZf
+  - _id: LpwhFBESL2L5DQzWW
+    name: three
+    value: 3
+    factorTypeId: beY87RhWHPuazePry
 lobbyConfigs:
   - name: default
     timeoutType: lobby
