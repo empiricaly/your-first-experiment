@@ -45,8 +45,15 @@ Empirica.gameInit(game => {
     round.addStage({
       name: "response",
       displayName: "Response",
-      durationInSeconds: 120
+      durationInSeconds: game.treatment.stageLength
     });
+
+    round.addStage({
+      name: "social",
+      displayName: "Social Information",
+      durationInSeconds: game.treatment.stageLength
+    });
+
   })
 
 });

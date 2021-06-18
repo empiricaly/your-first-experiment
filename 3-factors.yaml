@@ -1,0 +1,48 @@
+treatments:
+  - name: 1 player
+    factorIds:
+      - dpKA2KBx7r2q38akn
+    archivedAt: 2021-06-18T18:21:27.687Z
+  - name: 2 players
+    factorIds:
+      - 3eGGMECp2Jd3qvLoy
+    archivedAt: 2021-06-18T18:21:27.968Z
+  - name: 2 players 60s
+    factorIds:
+      - 3eGGMECp2Jd3qvLoy
+      - 7A9aMyqgQmZK7bXMp
+  - name: 1 player 60s
+    factorIds:
+      - dpKA2KBx7r2q38akn
+      - 7A9aMyqgQmZK7bXMp
+factorTypes:
+  - _id: beY87RhWHPuazePry
+    name: playerCount
+    description: The Number of players participating in the given game.
+    required: true
+    type: Integer
+    min: 1
+  - _id: Ytcd2bbXiSSmTWsXK
+    name: stageLength
+    description: length of the stages
+    required: true
+    type: Integer
+factors:
+  - _id: dpKA2KBx7r2q38akn
+    name: one
+    value: 1
+    factorTypeId: beY87RhWHPuazePry
+  - _id: 3eGGMECp2Jd3qvLoy
+    name: two
+    value: 2
+    factorTypeId: beY87RhWHPuazePry
+  - _id: 7A9aMyqgQmZK7bXMp
+    name: '60'
+    value: 60
+    factorTypeId: Ytcd2bbXiSSmTWsXK
+lobbyConfigs:
+  - name: default
+    timeoutType: lobby
+    timeoutInSeconds: 300
+    timeoutStrategy: fail
+    gameLobbyIds: []
